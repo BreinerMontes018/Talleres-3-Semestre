@@ -1,0 +1,91 @@
+@startuml Clases
+class Vehiculo {
+    -placa : String
+    -marca : String
+    -color : String
+    -tipo : String
+    -descripcion : String
+}
+
+class Parqueadero{
+    -id : int
+    -nombre : String
+    -area : float
+    -cubiculos : int 
+    -direccion : String
+    -estado : String
+}
+
+class Guardia{
+    -identificacion : String
+    -tipo : String
+    -nombre : String
+    -apellido : String
+    -apellido2 : String
+    -email : String
+    -telefono : String
+}
+
+class Cubiculo {
+    -id : int
+    -numero : int 
+    -ancho : String
+    -alto : String
+    -estado : String
+    -tipo : String
+    -Zona : String
+}
+
+class Horario{
+    -id : int
+    -dia : String
+    -horaInicio : String
+    -horaFin : String
+}
+
+class Turno{
+    -id : int
+    -horario : String
+    -guardia : String
+    -parqueadero : String
+    -cargo : String
+    -observaciones : String
+}
+
+class Usuario{
+    -identificacion : String
+    -tipo : String
+    -nombre : String
+    -apellido : String
+    -apellido2 : String
+    -email : String
+    -telefono : String
+    -rol : String
+    -reserva : boolean
+
+}
+
+class Tarifa{
+    -id : int
+    -valor : int
+    -tipo : String
+    -unidad : String
+}
+
+Usuario "1" -- "0..*" Vehiculo : posee >
+Parqueadero "1" -- "0..*" Cubiculo : contiene >
+Parqueadero "1" -- "0..*" Turno : tiene >
+Parqueadero "1" -- "0..*" Tarifa : define >
+
+Guardia "1" -- "0..*" Turno : asignado a >
+Guardia "1" -- "0..*" Horario : tiene >
+
+Cubiculo "0..1" -- "1" Vehiculo : estaciona >
+
+Horario "1" -- "0..*" Turno : define >
+
+Turno "1" -- "0..1" Guardia : realizado por >
+Turno "1" -- "1" Parqueadero : ocurre en >
+Turno "1" -- "1" Horario : sigue >
+
+@enduml
