@@ -1,0 +1,55 @@
+@startuml Comedor infantil
+
+class Niño{
+    -numeroMatricula : Int
+    -nombre : String
+    -apellido : String
+    -fechadeNacimiento : Date
+    -fechadeRetiro : Date
+}
+
+class PersonaAutorizada{
+    -dni : String
+   -nombre : String
+   -apellido : String
+   -direccion : String
+   -telefono : String
+   -relacion : String
+}
+
+class PersonaPago{
+   -cuentaCorriente : String
+}
+
+class Alergia{
+    ingredientes : Ingrediente
+}
+class Menu{
+    -numeroMenu : Int
+    -platos : List<plato>
+}
+
+class Plato{
+    -nombre : String
+    - ingredientes : List<Ingrediente>
+}
+
+class Ingrediente{
+    -nombre : String
+}
+
+class AsistenciaComida {
+    - fecha: Date
+    - menuConsumido: Menu
+}
+
+Niño "1" -- "1..*" PersonaAutorizada : autorizadaPor >
+Niño "1" -- "1" PersonaPago : pagadoPor >
+Niño "1" -- "0..*" Alergia : tiene >
+Niño "1" -- "0..*" AsistenciaComida : Asiste >
+AsistenciaComida "0..*" -- "1" Menu : contiene >
+Menu "1" -- "1..*" Plato : contiene >
+Plato "1" -- "1..*" Ingrediente : contiene >
+
+
+@enduml
