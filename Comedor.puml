@@ -22,7 +22,7 @@ class PersonaPago{
 }
 
 class Alergia{
-    ingredientes : Ingrediente
+    -ingredientes : Ingrediente
 }
 class Menu{
     -numeroMenu : Int
@@ -43,13 +43,15 @@ class AsistenciaComida {
     - menuConsumido: Menu
 }
 
-Niño "1" -- "1..*" PersonaAutorizada : autorizadaPor >
-Niño "1" -- "1" PersonaPago : pagadoPor >
-Niño "1" -- "0..*" Alergia : tiene >
-Niño "1" -- "0..*" AsistenciaComida : Asiste >
-AsistenciaComida "0..*" -- "1" Menu : contiene >
-Menu "1" -- "1..*" Plato : contiene >
-Plato "1" -- "1..*" Ingrediente : contiene >
+Niño "1" -- "1..*" PersonaAutorizada : "Tiene"
+Niño "1" -- "0..*" AsistenciaComida : "Registra"
+Niño "1" -- "1" PersonaPago : "Pagado por"
+Niño "1" -- "0..*" Alergia : "Tiene"
+AsistenciaComida "0..*" -- "1" Menu : "Consume"
+Menu "1" -- "0..*" Plato : "Contiene"
+Plato "1" -- "0..*" Ingrediente : "Usa"
+Alergia "1" -- "0..*" Ingrediente : "Involucra"
+PersonaAutorizada <|-- PersonaPago
 
 
 @enduml
