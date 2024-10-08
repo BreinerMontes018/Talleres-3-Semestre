@@ -1,0 +1,27 @@
+@startuml Ejercicio4
+
+class Estudiante {
+    - String nombre
+    - int edad
+    + Estudiante(String nombre, int edad)
+    + String getNombre()
+    + void setNombre(String nombre)
+    + int getEdad()
+    + void setEdad(int edad)
+    + String toString()
+}
+
+class Aula {
+    - int numero
+    - List<Estudiante> estudiantes
+    + Aula(int numero)
+    + void agregarEstudiante(Estudiante estudiante)
+    + void mostrarEstudiantes()
+    + int getNumero()
+    + void setNumero(int numero)
+    + List<Estudiante> getEstudiantes()
+    + void setEstudiantes(List<Estudiante> estudiantes)
+}
+
+Aula --> Estudiante : contiene >
+@enduml

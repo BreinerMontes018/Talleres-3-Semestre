@@ -1,0 +1,24 @@
+@startuml Ejercicio7
+
+class Proyecto {
+    - String nombre
+    + Proyecto(String nombre)
+    + String getNombre()
+}
+
+class Empleado {
+    - String nombre
+    + Empleado(String nombre)
+    + String getNombre()
+}
+
+class Asignacion {
+    - Empleado empleado
+    - Proyecto proyecto
+    + Asignacion(Empleado empleado, Proyecto proyecto)
+    + void mostrarAsignacion()
+}
+
+Asignacion --> Empleado : asigna >
+Asignacion --> Proyecto : asigna >
+@enduml

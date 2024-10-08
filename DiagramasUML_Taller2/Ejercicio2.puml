@@ -1,0 +1,12 @@
+@startuml Ejercicio2
+
+interface Nadador {
+    + void nadar()
+}
+
+class Delfin {
+    + void nadar()
+}
+
+Nadador <|.. Delfin
+@enduml

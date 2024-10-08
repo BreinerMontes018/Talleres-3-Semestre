@@ -1,0 +1,13 @@
+@startuml Ejercicio1
+
+class Animal {
+  +respirar()
+  +sonido()
+}
+
+class Perro {
+  +moverCola()
+}
+
+Animal <|-- Perro
+@enduml

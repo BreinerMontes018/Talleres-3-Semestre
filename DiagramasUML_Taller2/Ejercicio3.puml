@@ -1,0 +1,14 @@
+@startuml Ejercicio3
+
+class Documento {
+    - String contenido
+    + Documento(String contenido)
+    + String getContenido()
+}
+
+class Impresora {
+    + void imprimir(Documento doc)
+}
+
+Impresora --> Documento : imprime >
+@enduml

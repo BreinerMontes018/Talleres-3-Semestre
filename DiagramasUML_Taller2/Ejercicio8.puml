@@ -1,0 +1,16 @@
+@startuml Ejercicio8
+
+class Libro {
+    - String titulo
+    + Libro(String titulo)
+    + String getTitulo()
+}
+
+class Biblioteca {
+    - List<Libro> libros
+    + void agregarLibro(Libro libro)
+    + void mostrarLibros()
+}
+
+Biblioteca --> Libro : contiene >
+@enduml

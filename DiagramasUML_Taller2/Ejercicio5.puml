@@ -1,0 +1,16 @@
+@startuml Ejercicio5
+
+class Procesador {
+    + void ejecutar()
+    + void apagar()
+}
+
+class Computadora {
+    - Procesador procesador
+    + Computadora()
+    + void encender()
+    + void apagar()
+}
+
+Computadora --> Procesador : contiene >
+@enduml

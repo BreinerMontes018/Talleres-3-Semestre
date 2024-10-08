@@ -1,0 +1,24 @@
+@startuml Ejercicio6
+
+class Jugador {
+    - String nombre
+    - Equipo equipo
+    + Jugador(String nombre)
+    + void setEquipo(Equipo equipo)
+    + String getNombre()
+    + Equipo getEquipo()
+}
+
+class Equipo {
+    - String nombre
+    - List<Jugador> jugadores
+    + Equipo(String nombre)
+    + void setJugadores(List<Jugador> jugadores)
+    + void agregarJugador(Jugador jugador)
+    + void mostrarJugadores()
+    + String getNombre()
+}
+
+Jugador --> Equipo : pertenece a >
+Equipo --> Jugador : contiene >
+@enduml
