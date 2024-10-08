@@ -1,0 +1,20 @@
+@startuml Ejercicio1-Taller-3
+
+class Jugador {
+    - String nombre
+    + Jugador(String nombre)
+    + String getNombre()
+}
+
+class Equipo {
+    - List<Jugador> jugadores
+    + Equipo()
+    + void agregarJugador(Jugador jugador)
+    + Jugador buscarJugador(String nombre)
+    + boolean eliminarJugador(Jugador jugador)
+    + void eliminarTodosLosJugadores()
+    + void mostrarJugadores()
+}
+
+Equipo --> Jugador : contiene >
+@enduml

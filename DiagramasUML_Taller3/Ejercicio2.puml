@@ -1,0 +1,18 @@
+@startuml Ejercicio2-Taller-3
+
+class Puerta {
+    - String material
+    + Puerta(String material)
+    + String getMaterial()
+}
+
+class Casa {
+    - Puerta puerta
+    + Casa(Puerta puerta)
+    + Puerta obtenerPuerta()
+    + void cambiarPuerta(Puerta nuevaPuerta)
+    + void eliminarPuerta()
+}
+
+Casa --> Puerta : contiene >
+@enduml

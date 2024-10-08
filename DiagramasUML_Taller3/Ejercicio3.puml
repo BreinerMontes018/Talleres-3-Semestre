@@ -1,0 +1,24 @@
+@startuml Ejercicio3-Taller-3
+
+class Persona {
+    - String nombre
+    + Persona(String nombre)
+    + String getNombre()
+}
+
+class Evento {
+    - String nombre
+    + Evento(String nombre)
+    + String getNombre()
+}
+
+class Matrimonio {
+    - Persona persona
+    - Evento evento
+    + Matrimonio(Persona persona, Evento evento)
+    + void mostrarMatrimonio()
+}
+
+Matrimonio --> Persona : asociado a >
+Matrimonio --> Evento : asociado a >
+@enduml
